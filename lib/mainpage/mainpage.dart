@@ -18,6 +18,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // 상수 배열로 메뉴 카테고리 별도 분리
+  final List<Map<String, dynamic>> buttons = [
+    {'title': '족발/보쌈', 'page': const Jokbo()},
+    {'title': '돈까스/회', 'page': const Japanese()},
+    {'title': '피자', 'page': const Pizza()},
+    {'title': '중식', 'page': const Chinese()},
+    {'title': '치킨', 'page': const Chicken()},
+    {'title': '버거', 'page': const Burger()},
+    {'title': '분식', 'page': const Bunsick()},
+    {'title': '디저트', 'page': const Dessert()},
+    {'title': '찜/찌개', 'page': const Zzim()},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,22 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisSpacing: 10, // 수직 간격
         crossAxisSpacing: 10, // 수평 간격
         padding: const EdgeInsets.all(20), // 그리드 패딩
-        children: <Widget>[
-          _buildRoundButton('족발/보쌈', Jokbo()),
-          _buildRoundButton('돈까스/회', Japanese()),
-          _buildRoundButton('피자', Pizza()),
-          _buildRoundButton('중식', Chinese()),
-          _buildRoundButton('치킨', Chicken()),
-          _buildRoundButton('버거', Burger()),
-          _buildRoundButton('분식', Bunsick()),
-          _buildRoundButton('디저트', Dessert()),
-          _buildRoundButton('찜/찌개', Zzim()),
-        ],
+        children: buttons
+            .map<Widget>(
+                (button) => _buildRoundButton(button['title'], button['page']))
+            .toList(),
       ),
     );
   }
 
-// _buildRundButton 메소드 분리
   Widget _buildRoundButton(String title, Widget page) {
     return ElevatedButton(
       onPressed: () {
