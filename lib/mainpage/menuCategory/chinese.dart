@@ -1,16 +1,41 @@
 import 'package:flutter/material.dart';
+import '../ShopPage/ShopPage.dart';
+import '../ShopPage//buildShopButton.dart';
 
-class Chinese extends StatelessWidget {
-  // const NextScreen({Key? key}) : super(key: key);
-  // flutter 2.0 이상에서, 위젯 생성자에서 key 같은 매개변수를 부모 위젯으로 전달할 때 코드를 더 간단하게 만들 수 있게 됨
+class Chinese extends StatefulWidget {
   const Chinese({super.key});
 
+  @override
+  State<Chinese> createState() => _ChineseState();
+}
+
+class _ChineseState extends State<Chinese> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('중식화면'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            buildShopButton(context, '매장 1',
+                const ShopPage(menus: ['메뉴 1-1', '메뉴 1-2', '메뉴 1-3'])),
+            const SizedBox(height: 10),
+            buildShopButton(
+                context, '매장 2', const ShopPage(menus: ['메뉴 2-1', '메뉴 2-2'])),
+            const SizedBox(height: 10),
+            buildShopButton(
+                context,
+                '매장 3',
+                const ShopPage(
+                    menus: ['메뉴 3-1', '메뉴 3-2', '메뉴 3-3', '메뉴 3-4'])),
+            const SizedBox(height: 10),
+            buildShopButton(context, '매장 4', const ShopPage(menus: ['메뉴 4-1'])),
+            const SizedBox(height: 10),
+            buildShopButton(
+                context, '매장 5', const ShopPage(menus: ['메뉴 5-1', '메뉴 5-2'])),
+          ],
+        ),
       ),
     );
   }
