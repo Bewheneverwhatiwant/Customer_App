@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mainpage/mainpage.dart'; // MyHomePage를 정의한 파일을 import
+import 'mainpage/MainPage/mainpage.dart'; // MyHomePage를 정의한 파일을 import
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

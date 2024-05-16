@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../ShopPage/ShopPage.dart';
-import '../ShopPage/buildShopButton.dart';
+import 'ShopPage/ShopPage.dart';
+import './ShopPage/buildShopButton.dart';
 
 // 매장 이름과 매장별 메뉴 정보를 상수 배열로 분리
 // TODO: shop.txt 파일에서 category에 따라 받아오도록 개선 필요 (현재 알 수 없는 JSON 형식 오류로 출력 불가)
@@ -151,6 +151,8 @@ class Bunsick extends StatefulWidget {
 }
 
 class _BunsickState extends State<Bunsick> {
+  final List<String> checkedMenus = [];
+
   @override
   Widget build(BuildContext context) {
     // 'bunsick' 카테고리를 가진 매장만 필터링
@@ -165,8 +167,14 @@ class _BunsickState extends State<Bunsick> {
           final shop = bunsickShops[index]; // 현재 인덱스의 매장 정보
           return Column(
             children: [
-              buildShopButton(context, shop['name'],
-                  ShopPage(menus: shop['menus'] as List<String>)),
+              buildShopButton(
+                context,
+                shop['name'],
+                ShopPage(
+                  menus: shop['menus'] as List<String>,
+                  checkedMenus: checkedMenus,
+                ),
+              ),
               const SizedBox(height: 10),
             ],
           );
