@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 AppBar buildAppBar() {
   return AppBar(
-    backgroundColor: const Color(0xFF161F4E), // #161F4E 색상 값 사용
+    backgroundColor: const Color(0xFF6210CC), // #161F4E 색상 값 사용
     title: const Text(''),
     actions: [
       IconButton(

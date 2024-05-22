@@ -6,7 +6,7 @@ class Navi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: const Color(0xFF161F4E), // 네비게이션 바 배경색
+      backgroundColor: const Color(0xFF6210CC), // 네비게이션 바 배경색
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white,
       items: const <BottomNavigationBarItem>[

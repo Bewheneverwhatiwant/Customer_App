@@ -8,7 +8,7 @@ class AddressBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF161F4E), // 배경색 설정
+      color: const Color(0xFF6210CC), // 배경색 설정
       padding: const EdgeInsets.all(16.0), // 내부 여백 설정
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

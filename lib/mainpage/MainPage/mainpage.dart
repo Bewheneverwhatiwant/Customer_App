@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      backgroundColor: const Color(0xFF161F4E), // #161F4E 색상 설정
+      backgroundColor: const Color(0xFF6210CC), // #161F4E 색상 설정
       body: SingleChildScrollView(
         child: Column(
           children: [

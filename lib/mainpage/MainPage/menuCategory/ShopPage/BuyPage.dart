@@ -38,9 +38,8 @@ class _BuyPageState extends State<BuyPage> {
       },
     );
 
-    // Simulate a delay for payment processing
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pop(context); // Close the loading dialog
+      Navigator.pop(context);
       _showPaymentSuccessDialog();
     });
   }
@@ -56,11 +55,9 @@ class _BuyPageState extends State<BuyPage> {
       },
     );
 
-    // Simulate a delay before returning to home screen
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pop(context); // Close the success dialog
-      Navigator.popUntil(
-          context, (route) => route.isFirst); // Return to home screen
+      Navigator.pop(context);
+      Navigator.popUntil(context, (route) => route.isFirst);
     });
   }
 
@@ -69,7 +66,7 @@ class _BuyPageState extends State<BuyPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('주문자 정보'),
-        backgroundColor: const Color(0xFF161F4E),
+        backgroundColor: const Color(0xFF6210CC),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
